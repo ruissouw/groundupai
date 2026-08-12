@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import pandas as pd
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def generate_report():
         stats["kurtosis"] = df[column].kurt()
         report[column] = stats
 
-    return report
+    return jsonify(report)
 
 if __name__ == '__main__':
-    app.run(port=10000)
+     app.run(host='0.0.0.0', port=10000)

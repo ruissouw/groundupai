@@ -1,0 +1,7 @@
+services:
+  restapi:
+    build:
+      context: .
+      dockerfile: restapi/Dockerfile
+    ports:
+      - "10000:10000"
